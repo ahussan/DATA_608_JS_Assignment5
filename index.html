@@ -74,47 +74,16 @@ function calc(){
 
 <hr>
 
-//*********************************************************************
 <h2>Problem 2A: Display President's data in a table</h2>
+<p id="presidents"></p>
+<hr>
 
-<script type="text/javascript">
-    document.write('<p><i> Presiden\'s data is loaded from https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv </i></p>');
-    function displaydata(){
-        const csvURL = "https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv";
-        d3.csv(csvURL).then(function(data) {
-            let table = '<table>';
-            table += '<tr>';
-            for (let j = 0; j < data.columns.length; j++) {
-              table += '<td>' + data.columns[j] + '</td>';
-            }
-            table += '</tr>';
-        
-            for (let i = 0; i < data.length; i++) {
-              table += '<tr>';
-              for (let j = 0; j < data.columns.length; j++) {
-                table += '<td>' + data[i][data.columns[j]] + '</td>';
-              }
-              table += '</tr>';
-            }
-            table += '</table>';
-            console.log(table)
-            return(table);
-          });
-    }
-    </script>
+<h2>Problem 2B: Get Height and Weight:-</h2>
+<p>Enter President's Name: <input type="text" id="president-input"></p>
+<p><button id="get-president">Get Weight and Height</button></p>
+<p id="president-data"></p>
 
-<script>
-    function data_show(){
-        var t = document.getElementById("datashow");
-        t.innerHTML = displaydata();
-    }
-</script>
-
-<p>
-<form>
-    <input type="button" value="Show President Data" onClick="data_show();">
-</form>
-</p>
-<div id="datashow"></div>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
