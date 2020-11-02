@@ -37,7 +37,7 @@
       const name = input.value;
       let data = null;
       for (let i = 0; i < presidentsData.length; i++) {
-        if (presidentsData[i].Name === name) {
+        if (presidentsData[i].Name.toLowerCase() === name.toLowerCase()) {
           data = presidentsData[i];
           break;
         }
